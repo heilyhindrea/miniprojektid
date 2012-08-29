@@ -1,0 +1,24 @@
+/* 
+    Document   : transition
+    Created on : 20.08.2012, 20:43:30
+    Author     : Heily
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#content{ 
+    height: 150px;
+    width: 150px;
+    background-color: blueviolet;
+    color: #FFFFFF;
+    transition: height 3s, width 3s, transform 3s;
+
+    
+}
+
+#content:hover{
+    height: 300px;
+    width: 300px;
+    transform: rotate(180deg);
+}
+
