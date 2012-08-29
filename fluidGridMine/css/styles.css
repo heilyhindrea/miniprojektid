@@ -1,0 +1,57 @@
+html{
+    width: 100%;
+    
+}
+body{
+    width: 85%;
+    margin: 0% auto 0% auto;
+    
+}
+.onecol {
+width: 8.33%;
+}
+
+.twocol {
+width: 16.66%;
+}
+
+.threecol {
+width: 24.99%;
+}
+
+.fourcol {
+width: 33.32%;
+}
+
+.fivecol {
+width: 41.65%;
+}
+
+.sixcol {
+width: 49.98%;
+}
+
+.sevencol {
+width: 58.31%;
+}
+
+.eightcol {
+width: 66.64%;
+}
+
+.ninecol {
+width: 74.97%;
+}
+
+.tencol {
+width: 83.3%;
+}
+
+.elevencol {
+width: 91.63%;
+}
+
+.twelvecol {
+width: 100%;
+
+}
