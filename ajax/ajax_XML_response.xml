@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <page>
+        <name>indexXML</name>
+        <element>
+            <id>disain</id>
+            <content>
+                <est>See sisu on eesti keeles</est>
+                <en>this is the content in english</en>
+            </content>
+        </element>
+    </page>
+</root>

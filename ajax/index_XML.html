@@ -1,0 +1,39 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>indexXML</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="js/jquery.js"></script>
+        <script>
+        function load()
+        {
+                $.ajax({
+                url: 'http://localhost:8080//miniprojektid/ajax/ajax_XML_response.xml',
+                async:true,
+                statusCode: {
+                        404: function() {
+                        alert("page not found");
+                        }
+                    },
+                success: function(data) {
+                    //here comes my content
+                    xmlDoc = $.parseXML(data),
+                    $xml = $(xmlDoc),
+                    $est_content = $xml.find("est");
+                    
+                    $("#disain").append($est_content.text());
+                    alert('Load was performed.');
+                    }
+                });
+        }
+        </script>
+    </head>
+    <body>
+        <div id="content">TODO write content</div>
+        <button type="button" onclick="load()">Change Content</button>
+    </body>
+</html>
