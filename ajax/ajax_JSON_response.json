@@ -1,0 +1,14 @@
+{
+    "page": {
+        "name": "indexJSON",
+        "elements": {
+            "id":"disain",
+            "content": {
+                "est": "See on eestikeelne sisu",
+                "eng": "This isin english"
+            }
+        }
+    }
+        
+   
+}

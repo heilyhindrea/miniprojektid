@@ -14,22 +14,22 @@ and open the template in the editor.
                 $.ajax({
                 url: 'http://localhost:8080//miniprojektid/ajax/ajax_XML_response.xml',
                 async:true,
+                dataType: "xml",
                 statusCode: {
                         404: function() {
                         alert("page not found");
                         }
                     },
                 success: function(data) {
-                    //here comes my content
-                    xmlDoc = $.parseXML(data),
-                    $xml = $(xmlDoc),
-                    $est_content = $xml.find("est");
-                    
-                    $("#disain").append($est_content.text());
-                    alert('Load was performed.');
+               
+            
+                    alert($(data).find("page").text());
                     }
                 });
         }
+        
+       
+        
         </script>
     </head>
     <body>
