@@ -1,0 +1,16 @@
+#content{
+    border-bottom: medium solid #039;
+    border-top: medium solid #039
+}
+
+ul{
+    list-style: none;
+    padding:0;
+    font-size: 1.5em;
+    
+}
+
+ul li {
+    display: inline;
+    
+}

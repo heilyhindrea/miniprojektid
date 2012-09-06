@@ -1,14 +1,27 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
 <html>
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="js/jquery.js"></script>
+        <script>
+            
+            function load(){
+                
+                $.getJSON("http://localhost:8080//miniprojektid/ajax/ajax_JSON_response.json", function(json) {
+                    
+                    $('<p>'+json.page.content.est+'</p>').appendTo($('div'))
+                    
+                    });
+            }    
+                
+        </script>        
+               
+           
+        
     </head>
     <body>
         <div>TODO write content</div>
+        <button  onclick="load()">get JSON</button>
     </body>
 </html>
