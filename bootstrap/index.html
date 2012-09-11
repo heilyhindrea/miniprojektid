@@ -7,14 +7,37 @@
     
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="../jTemplate/js/jquery-jtemplates.js" type="text/javascript"></script> 
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-     <script>
+    <link href="css/custom.css" rel="stylesheet">
+    
+    <script>
          $(document).ready(function(){ 
+         
+         $.getJSON("http://localhost:8080//miniprojektid/bootstrap/et-navigation.json", function(json) {
+                    
+                   
+                   $("#navigation").setTemplateElement("navigation-template");
+                   $("#navigation").processTemplate(json);
+                   
+                    clickedElement(); 
             
-            $('.nav li').click(function() {
+                    
+                    });
+              
+                         
+         });
+         
+         function clickedElement(){
+             
+               $('#lan li').click(function(event) {
+                   
                 
-                $('.nav li').removeClass('active');
+                $('#lan li').removeClass('active');
+                
+                alert(event.target.parent().attr());
                 
                     var $this = $(this);
                         if (!$this.hasClass('active')) {
@@ -22,70 +45,20 @@
                         }
                       
             });
-         });
+         }
            
          
      </script>
-     <style>
-         body, html{
-             background-color: #e1e1e1;
-             height: 100%;
-                       
-         }
-         
-         header{
-             margin: 1% 0 1% 0;
-         }
-         
-         address {
-             border-top: thin solid #0077b3;
-             margin-top: 2%;
-             text-align: center;
-         }
-         #content{
-             
-             border-top: thin solid #0077b3;
-             border-bottom: thin solid #0077b3;
-             overflow: auto;
-             padding: 1%;
-         }
-                
-         #navigation {
-             padding-top: 2%;
-         }
-         #navigation li, #friends {
-             list-style: none;
-             
-         }
-        
-         #friends {
-             margin:0;
-             
-         }
-         .friends {
-             float: right;
-             vertical-align: top;
-         }
-         #lan {
-                float:right;
-                margin:0;
-            }
-          
-            #kontakt {
-                margin-top: 1%;
-            }
-            
-         
-     </style>
+   
   </head>
-  <body>
+  <body lang="et">
       <header class=" container clearfix">
          
           <img  src="http://placehold.it/400x100" alt="Agentuuri logo" title="Agentuuri logo ja slogan"/>
           
-          <ul id ="lan" class="nav nav-pills">
-            <li class="active"><a href="#est">eesti keel</a></li>
-            <li><a href="#en">english</a></li>
+          <ul id="lan" class="nav nav-pills click">
+            <li class="active"><a>eesti keel</a></li>
+            <li><a>english</a></li>
           </ul>
           
       </header>
@@ -115,106 +88,47 @@
               </div>
           </div>
       </div>
-    <div id ="navigation" class="container">
-        <div class="row clearfix">
-             <div class="span2">
-                 
-                 <ul class="nav nav-list">
-                        
-                      <li class="nav-header"><a href="#pr">pr</a></li>
-                      <li><a href="#meediasuhted">meediasuhted</a></li>
-                      <li><a href="#pressideated">pressiteated</a></li>
-                      <li><a href="#pressiuritused">pressiüritused</a></li>
-                        
-                </ul>
-             
-            </div>
-            
-            <div class="span2">
-                
-                <ul class="nav nav-list">
-                    <li class="nav-header"><a href="#disain">disain</a></li>
-                    <li class="active"><a href="#graafiline_disain">graafiline disain</a></li>
-                    <li><a href="#kuljendus">küljendus</a></li>
-                    <li><a href="#fototootlus">fototöötlus</a></li>
-                    
-                </ul>
-            </div>
-            
-             <div class="span2">
-                
-                <ul class="nav nav-list">
-                    <li class="nav-header"><a href="#tolked">tõlked</a></li>
-                    <li><a href="#kirjalikud_tolked">kirjalikud tõlked</a></li>
-                    <li><a href="#suulised_jareltolked">suulised järeltõlked</a></li>
-                    <li><a href="#keelekorrelktuur">keelekorrektuur</a></li>
-                </ul>
-            </div>
-           
-             <div class="span2">
-                
-                <ul class="nav nav-list">
-                    <li class="nav-header"><a href="#uritused">üitused</a></li>
-                    <li><a href="#vastuvotud">vastuvõtud</a></li>
-                    <li><a href="#banketid">banketid</a></li>
-                    <li><a href="#firmapeod">firmapeod</a></li>
-                    <li><a href="#konverentsid">konverentsid</a></li>
-                    <li><a href="#pressiuritused">pressiüritused</a></li>
-                    <li><a href="#koolitused">koolitused</a></li>
-                </ul>
-            </div>
-             <div class="span2">
-               
-                <ul class="nav nav-list">
-                    <li class="nav-header"><a href="#tootmine">tootmine</a></li>
-                    <li><a href="#lightboxid">lightboxid</a></li>
-                    <li><a href="#turvavaravate_katted">turvaväravate katted</a></li>
-                    <li><a href="#roll-upid">roll-upid</a></li>
-                    <li><a href="#lipud">lipud</a></li>
-                    <li><a href="#plakatid/bannerid">plakatid/bännerid</a></li>
-                    <li><a href="#kleebised">kleebised</a></li>
-                    <li><a href="#reklaamroivad">reklaamrõivad</a></li>
-                    <li><a href="#trukised">trükised</a></li>
-                </ul>
-            </div>
-           
-            <div class="span2">
-                
-                <ul class="nav nav-list">
-                    <li class="nav-header"><a href="#meediavahendus">meediavahendus</a></li>
-                    <li><a href="#trukimeedia">trükimeedia</a></li>
-                    <li><a href="#valimeedia">välimeedia</a></li>
-                </ul>
-            </div>
-            
-            
-        </div> <!--END ROW -->
-    </div> <!-- END NAVIGATION -->
+     
+    <div class="fixed">kontakt?</div> 
+    <div id ="navigation" class="container click"></div> <!-- END NAVIGATION -->
+    
     <div class="container">
-        <div id="kontakt" class="row well">
-            <div class="span2">
-                <img src="http://placehold.it/150x150" alt="kontaktinimene" title="Lemme pilt" />
-            </div>
-            <div class="span2">
-                <label>Lemme Leima</label>
-                <a href="mailto:#">meedia@magnalabor.ee</a><br>
-                <label>+372 5145369</label>
-            </div>
-            
-            <div class="span7 friends">
+        <div class="row clearfix"> 
+            <div class="span12">
                 <label>SÕBRAD</label>
-                <ul id="friends">
-                    <li><a href="#">Tepmera</a></li>
-                    <li><a href="#">Maasikalabor</a></li>
+                <ul id="friends_list">
+                    <li><a>Tepmera</a></li>
+                    <li><a>Maasikalabor</a></li>
                 </ul>
-            </div>
+            </div> <!-- END FRIEDS -->
             
         </div>
-        <address>
-                Magna Labor OÜ, Madara 27, 10612 Tallinn 
-        </address>
-          
+         <div class="row"> 
+            <address class="span12">
+                    Magna Labor OÜ, Madara 27, 10612 Tallinn 
+            </address>
+          </div>
     </div>
+    
+    <!-- TEMPLATES -->
+    <textarea id="navigation-template" style="display:none;">
+            <div class="row clearfix">  
+
+                {#foreach $T.column as column}        
+                <div class="span2">
+                   <ul class="nav nav-list">
+                        
+                      <li class="nav-header"><a>{$T.column.header}</a></li>
+                      {#foreach $T.column.elements as item}
+                      <li><a>{$T.item.value}</a></li>
+                      {#/for}
+                        
+                    </ul>
+                </div>
+                {#/for}
+                
+             </div>   
+      </textarea>
   </body>
 </html>
 
@@ -225,4 +139,13 @@
                     <li>plakatid</li>
                     <li>kataloogid ja kliendilehed</li>
                     <li>flaierid ja voldikud</li>
-                 </ul>-->
+                 </ul>
+
+<div class="span2">
+                <img src="http://placehold.it/150x150" alt="kontaktinimene" title="Lemme pilt" />
+            </div>
+            <div class="span2">
+                <label>Lemme Leima</label>
+                <a href="mailto:#">meedia@magnalabor.ee</a><br>
+                <label>+372 5145369</label>
+            </div>s-->

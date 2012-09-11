@@ -9,11 +9,14 @@
         <script>
             $(document).ready(function(){
                 
-                                
+             
+                
+            });
+            function changeContent(){                   
                 $('#lang').click(function(event){
                     
                     //muudame contenti keele ära
-                $("#content").attr('lang', event.target.lang)
+                $("body").attr('lang', event.target.lang)
                 
                 //nüüd võtame vastavalt page namele ja keelele reaalse sisu
                 
@@ -26,21 +29,19 @@
                     });
                     
                 
-                });
-                
-            });
+                });}
         </script>
     </head>
-    <body>
+    <body lang="et">
         <header>
             <h1>Header</h1> 
             <ul id="lang">
-                <li><a href="#" lang="et">est</a></li>
-                <li><a href="#" lang="en">eng</a></li>
+                <li><button lang="et" onclick="changeContent()">eesti keeles</button></li>
+                <li><button lang="en" onclick="changeContent()">in english</button></li>
             </ul>
         </header>
         
-        <div id="content" lang="et"></div>
+        <div id="content"></div>
         
         <footer>
             <h2>Footer</h2>
