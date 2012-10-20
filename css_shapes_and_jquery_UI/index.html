@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="js/jquery-1.8.2.js"></script>
+        <script src="js/jquery-ui-1.9.0.custom.js"></script>
+         <script>
+            
+           function drawClouds() {
+                var canvas = document.getElementById('theCanvas1');
+                var context = canvas.getContext('2d');
+                context.fillStyle = "red";
+                context.arc(50, 50, 50, 0, Math.PI * 2, true);
+                context.closePath();
+                context.arc(100, 50, 50, 0, Math.PI * 2, true);
+                context.closePath();
+                context.arc(200, 100, 50, 0, Math.PI * 2, true);
+                context.fill();           
+}
+        </script>    
+        
+        <style>
+            /*.circle_outer {
+            
+                width: 200px;
+                height: 200px;
+                background: gray;
+                -moz-border-radius: 100px;
+                -webkit-border-radius: 100px;
+                border-radius: 100px;
+              
+            }
+            .circle_inner{
+               
+             
+                width: 100px;
+                height: 100px;
+                background: silver;
+                -moz-border-radius: 50px;
+                -webkit-border-radius: 50px;
+                border-radius: 50px;
+               
+                
+                
+            }
+            
+            
+            p{
+                padding: 20px;
+            }*/
+        </style>
+    </head>
+    <body onLoad="drawClouds()">
+        
+        <div class="canvasHolder">
+        <canvas id="theCanvas1" width="1000" height="500"></canvas>
+        </div>
+          <div  class="circle_outer">
+              
+        <div class="circle_inner">
+            <p>This should be round.</p>
+        </div>
+          </div> 
+    
+    </body>
+   
+</html>
